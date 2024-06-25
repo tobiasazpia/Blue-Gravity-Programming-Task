@@ -12,7 +12,9 @@ public class PlayerController : MonoBehaviour
 
     private Rigidbody2D _rb;
 
-    private float _playerSpeed = 10;
+    private Animator _animator;
+
+    private float _playerSpeed = 2;
 
     // Start is called before the first frame update
     void Start()
@@ -27,16 +29,30 @@ public class PlayerController : MonoBehaviour
         _inputActions.Player.Fire.Enable();
 
         _rb = GetComponent<Rigidbody2D>();
+
+        _animator = GetComponent<Animator>();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void FixedUpdate()
     {
+        //Player movement
         Vector2 moveDir = _moveAction.ReadValue<Vector2>();
         Vector2 vel = _rb.velocity;
+
         vel.x = _playerSpeed * moveDir.x;
         vel.y = _playerSpeed * moveDir.y;
         _rb.velocity = vel;
+
+        //Animation
+        if(vel.sqrMagnitude > 0.01) //To determine idle facing direction
+        {
+            _animator.SetFloat("LastHor", vel.x);
+            _animator.SetFloat("LastVert", vel.y);
+        } 
+
+        _animator.SetFloat("Horizontal", vel.x);
+        _animator.SetFloat("Vertical", vel.y);
+        _animator.SetFloat("Speed", vel.sqrMagnitude);
     }
 
     private void OnDisable()
