@@ -7,7 +7,10 @@ public class UIController : MonoBehaviour
 {
     VisualElement _shop;
 
-    private Button _buy;
+    private Button _buy1;
+    private Button _buy2;
+    private Button _buy3;
+
     public PlayerController _outfit;
 
     // Start is called before the first frame update
@@ -16,8 +19,12 @@ public class UIController : MonoBehaviour
         var root = GetComponent<UIDocument>().rootVisualElement;
         _shop = root.Q<VisualElement>("ShopContainer");
 
-        _buy = root.Q<Button>("Buy1");
-        _buy.RegisterCallback<ClickEvent>(OnBuyClicked);
+        _buy1 = root.Q<Button>("Buy1");
+        _buy1.RegisterCallback<ClickEvent>(OnBuy1Clicked);
+        _buy2 = root.Q<Button>("Buy2");
+        _buy2.RegisterCallback<ClickEvent>(OnBuy2Clicked);
+        _buy3 = root.Q<Button>("Buy3");
+        _buy3.RegisterCallback<ClickEvent>(OnBuy3Clicked);
     }
 
     // Update is called once per frame
@@ -38,8 +45,18 @@ public class UIController : MonoBehaviour
     }
 
 
-    private void OnBuyClicked(ClickEvent evt)
+    private void OnBuy1Clicked(ClickEvent evt)
+    {
+        _outfit.ChangeOutfit(0);
+    }
+
+    private void OnBuy2Clicked(ClickEvent evt)
     {
         _outfit.ChangeOutfit(1);
+    }
+
+    private void OnBuy3Clicked(ClickEvent evt)
+    {
+        _outfit.ChangeOutfit(2);
     }
 }
