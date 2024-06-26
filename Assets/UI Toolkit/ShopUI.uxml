@@ -1,7 +1,7 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
     <ui:VisualElement name="Header" style="flex-direction: row-reverse; height: 10%;">
         <ui:VisualElement name="Money" style="margin-left: 50px; margin-right: 50px; margin-top: 50px; margin-bottom: 50px; flex-direction: row;">
-            <ui:Label text="100" display-tooltip-when-elided="true" name="Amount" enable-rich-text="true" style="font-size: 32px;" />
+            <ui:Label text="100" display-tooltip-when-elided="true" name="GoldAmount" enable-rich-text="true" style="font-size: 32px;" />
             <ui:VisualElement name="Icon" style="background-image: url(&apos;project://database/Assets/Art/Brackeys/2D%20Mega%20Pack/Items%20&amp;%20Icons/Pixel%20Art/Coin.png?fileID=2800000&amp;guid=d2c0dc76eca05bb4eb4f3fc4a37f258d&amp;type=3#Coin&apos;); width: 30px; height: 30px;" />
         </ui:VisualElement>
     </ui:VisualElement>

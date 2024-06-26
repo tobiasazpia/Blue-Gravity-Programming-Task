@@ -322,6 +322,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _outfit: {fileID: 937705560}
+  _shopController: {fileID: 961681376}
 --- !u!4 &799449341
 Transform:
   m_ObjectHideFlags: 0
@@ -631,6 +632,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pI: {fileID: 0}
   _uI: {fileID: 799449340}
+  prices: 28000000320000000a000000
 --- !u!61 &961681377
 BoxCollider2D:
   m_ObjectHideFlags: 0

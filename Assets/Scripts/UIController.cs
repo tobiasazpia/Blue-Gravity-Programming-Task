@@ -11,7 +11,10 @@ public class UIController : MonoBehaviour
     private Button _buy2;
     private Button _buy3;
 
+    private Label _goldAmount;
+
     public PlayerController _outfit;
+    public ShopController _shopController;
 
     // Start is called before the first frame update
     void Start()
@@ -25,6 +28,8 @@ public class UIController : MonoBehaviour
         _buy2.RegisterCallback<ClickEvent>(OnBuy2Clicked);
         _buy3 = root.Q<Button>("Buy3");
         _buy3.RegisterCallback<ClickEvent>(OnBuy3Clicked);
+
+        _goldAmount = root.Q<Label>("GoldAmount");
     }
 
     // Update is called once per frame
@@ -36,7 +41,7 @@ public class UIController : MonoBehaviour
     public void GoldChangeHandler(int newVal)
     {
         //Update Gold UI variable.
-        /*element.text = newVal;*/
+        _goldAmount.text = newVal.ToString();
     }
 
     public void ToogleShop()
@@ -47,16 +52,29 @@ public class UIController : MonoBehaviour
 
     private void OnBuy1Clicked(ClickEvent evt)
     {
-        _outfit.ChangeOutfit(0);
+        OutfitLogic(0);
     }
 
     private void OnBuy2Clicked(ClickEvent evt)
     {
-        _outfit.ChangeOutfit(1);
+        OutfitLogic(1);
     }
 
     private void OnBuy3Clicked(ClickEvent evt)
     {
-        _outfit.ChangeOutfit(2);
+        OutfitLogic(2);
+    }
+
+    private void OutfitLogic(int outfitID)
+    {
+        _outfit.ChangeOutfit(outfitID);
+        ////If not alredy owned,
+        if (_outfit.OwnsOutfit(outfitID))
+        {
+            //cahnge text to "Equip"
+            //spend gold
+            _outfit.Gold -= _shopController.prices[outfitID];
+            //Sell becomes available
+        }
     }
 }

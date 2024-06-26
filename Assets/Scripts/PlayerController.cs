@@ -18,6 +18,8 @@ public class PlayerController : MonoBehaviour
 
     private SpriteLibrary _spriteLibrary;
     public SpriteLibraryAsset[] _outfits;
+    private bool[] outfitsOwned = { false, false, false };
+
     //private Animator _animatorOutfit;
 
     private float _playerSpeed = 2;
@@ -113,5 +115,10 @@ public class PlayerController : MonoBehaviour
     public void ChangeOutfit(int outfitID)
     {
         _spriteLibrary.spriteLibraryAsset = _outfits[outfitID];
+    }
+
+    public bool OwnsOutfit(int outfitID)
+    {
+        return _outfits[outfitID];
     }
 }
