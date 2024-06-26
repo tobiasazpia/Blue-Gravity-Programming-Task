@@ -13,7 +13,7 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D _rb;
 
     private Animator _animator;
-    private Animator _animatorOutfit1;
+    private Animator _animatorOutfit;
 
     private float _playerSpeed = 2;
 
@@ -50,7 +50,9 @@ public class PlayerController : MonoBehaviour
         _rb = GetComponent<Rigidbody2D>();
 
         _animator = GetComponent<Animator>();
-        _animatorOutfit1 = GetComponentInChildren<Animator>();
+        _animatorOutfit = GetComponentInChildren<Animator>();
+
+        Debug.Log(_animatorOutfit);
 
         _gold = 100;
         _ui = FindObjectOfType<UIController>();
@@ -72,11 +74,18 @@ public class PlayerController : MonoBehaviour
         {
             _animator.SetFloat("LastHor", vel.x);
             _animator.SetFloat("LastVert", vel.y);
+            _animatorOutfit.SetFloat("LastHor", vel.x);
+            _animatorOutfit.SetFloat("LastVert", vel.y);
         } 
 
         _animator.SetFloat("Horizontal", vel.x);
         _animator.SetFloat("Vertical", vel.y);
         _animator.SetFloat("Speed", vel.sqrMagnitude);
+        _animatorOutfit.SetFloat("Horizontal", vel.x);
+        _animatorOutfit.SetFloat("Vertical", vel.y);
+        _animatorOutfit.SetFloat("Speed", vel.sqrMagnitude);
+
+        Debug.Log(_animatorOutfit.GetFloat("LastVert"));
     }
 
     private void OnDisable()
