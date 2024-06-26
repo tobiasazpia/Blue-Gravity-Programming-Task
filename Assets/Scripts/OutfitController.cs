@@ -42,6 +42,9 @@ public class OutfitController : MonoBehaviour
         _ui = FindObjectOfType<UIController>();
 
         _rb = GetComponent<Rigidbody2D>();
+
+        _animator.SetFloat("LastHor", 0);
+        _animator.SetFloat("LastVert", 1);
     }
 
     private void FixedUpdate()

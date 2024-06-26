@@ -70,7 +70,7 @@ public class UIController : MonoBehaviour
     {
         _outfit.ChangeOutfit(outfitID);
         ////If not alredy owned,
-        if (_playerController.OwnsOutfit(outfitID))
+        if (!_playerController.OwnsOutfit(outfitID))
         {
             _playerController.BoughtOutfit(outfitID);
             //cahnge text to "Equip"

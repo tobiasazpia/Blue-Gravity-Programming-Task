@@ -60,6 +60,9 @@ public class PlayerController : MonoBehaviour
         _gold = 100;
         _ui = FindObjectOfType<UIController>();
         OnGoldChange += _ui.GoldChangeHandler;
+
+        _animator.SetFloat("LastHor", 0);
+        _animator.SetFloat("LastVert", 1);
     }
 
     private void Update()
