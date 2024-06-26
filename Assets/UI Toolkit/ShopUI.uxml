@@ -5,7 +5,7 @@
             <ui:VisualElement name="Icon" style="background-image: url(&apos;project://database/Assets/Art/Brackeys/2D%20Mega%20Pack/Items%20&amp;%20Icons/Pixel%20Art/Coin.png?fileID=2800000&amp;guid=d2c0dc76eca05bb4eb4f3fc4a37f258d&amp;type=3#Coin&apos;); width: 30px; height: 30px;" />
         </ui:VisualElement>
     </ui:VisualElement>
-    <ui:VisualElement name="ShopContainer" style="height: 90%; flex-direction: column-reverse; align-items: stretch; display: flex; visibility: visible;">
+    <ui:VisualElement name="ShopContainer" style="height: 90%; flex-direction: column-reverse; align-items: stretch; display: flex; visibility: hidden;">
         <ui:VisualElement name="ShopItems" style="flex-direction: row; justify-content: space-around; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; border-left-width: 5px; border-right-width: 5px; border-top-width: 5px; border-bottom-width: 5px; border-left-color: rgb(178, 125, 78); border-right-color: rgb(178, 125, 78); border-top-color: rgb(178, 125, 78); border-bottom-color: rgb(178, 125, 78); padding-left: 50px; padding-right: 50px; padding-top: 50px; padding-bottom: 50px; border-top-left-radius: 50px; border-bottom-left-radius: 50px; border-top-right-radius: 50px; border-bottom-right-radius: 50px; background-color: rgba(188, 137, 88, 0.65);">
             <ui:VisualElement name="Item" style="width: 100px; height: 100px; align-items: center;">
                 <ui:VisualElement name="Image" style="background-image: url(&apos;project://database/Assets/Art/char_a_p1/1out/char_a_p1_1out_fstr_v04.png?fileID=-1059270025&amp;guid=59142195de9882541b02243762ffe0b6&amp;type=3#char_a_p1_1out_fstr_v04_0&apos;); width: 60px; height: 60px; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0; scale: 5 5; transform-origin: center 60%;" />
@@ -13,6 +13,7 @@
                     <ui:Label text="20" display-tooltip-when-elided="true" name="Amount" />
                     <ui:VisualElement name="Icon" style="background-image: url(&apos;project://database/Assets/Art/Brackeys/2D%20Mega%20Pack/Items%20&amp;%20Icons/Pixel%20Art/Coin.png?fileID=2800000&amp;guid=d2c0dc76eca05bb4eb4f3fc4a37f258d&amp;type=3#Coin&apos;); width: 30px; height: 30px;" />
                     <ui:Button text="Buy" display-tooltip-when-elided="true" name="Buy1" />
+                    <ui:Button text="Sell" display-tooltip-when-elided="true" name="Sell1" style="display: none;" />
                 </ui:VisualElement>
             </ui:VisualElement>
             <ui:VisualElement name="Item" style="width: 100px; height: 100px; align-items: center;">
@@ -21,6 +22,7 @@
                     <ui:Label text="20" display-tooltip-when-elided="true" name="Amount" />
                     <ui:VisualElement name="Icon" style="background-image: url(&apos;project://database/Assets/Art/Brackeys/2D%20Mega%20Pack/Items%20&amp;%20Icons/Pixel%20Art/Coin.png?fileID=2800000&amp;guid=d2c0dc76eca05bb4eb4f3fc4a37f258d&amp;type=3#Coin&apos;); width: 30px; height: 30px;" />
                     <ui:Button text="Buy" display-tooltip-when-elided="true" name="Buy2" />
+                    <ui:Button text="Sell" display-tooltip-when-elided="true" name="Sell2" style="display: none;" />
                 </ui:VisualElement>
             </ui:VisualElement>
             <ui:VisualElement name="Item" style="width: 100px; height: 100px; align-items: center;">
@@ -29,6 +31,7 @@
                     <ui:Label text="20" display-tooltip-when-elided="true" name="Amount" />
                     <ui:VisualElement name="Icon" style="background-image: url(&apos;project://database/Assets/Art/Brackeys/2D%20Mega%20Pack/Items%20&amp;%20Icons/Pixel%20Art/Coin.png?fileID=2800000&amp;guid=d2c0dc76eca05bb4eb4f3fc4a37f258d&amp;type=3#Coin&apos;); width: 30px; height: 30px;" />
                     <ui:Button text="Buy" display-tooltip-when-elided="true" name="Buy3" />
+                    <ui:Button text="Sell" display-tooltip-when-elided="true" name="Sell3" style="display: none;" />
                 </ui:VisualElement>
             </ui:VisualElement>
         </ui:VisualElement>

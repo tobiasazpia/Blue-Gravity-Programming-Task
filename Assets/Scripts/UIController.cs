@@ -7,9 +7,9 @@ public class UIController : MonoBehaviour
 {
     VisualElement _shop;
 
-    private Button _buy1;
-    private Button _buy2;
-    private Button _buy3;
+    private Button[] _buy = new Button[3];
+    private Button[] _sell = new Button[3];
+
 
     private Label _goldAmount;
 
@@ -23,12 +23,21 @@ public class UIController : MonoBehaviour
         var root = GetComponent<UIDocument>().rootVisualElement;
         _shop = root.Q<VisualElement>("ShopContainer");
 
-        _buy1 = root.Q<Button>("Buy1");
-        _buy1.RegisterCallback<ClickEvent>(OnBuy1Clicked);
-        _buy2 = root.Q<Button>("Buy2");
-        _buy2.RegisterCallback<ClickEvent>(OnBuy2Clicked);
-        _buy3 = root.Q<Button>("Buy3");
-        _buy3.RegisterCallback<ClickEvent>(OnBuy3Clicked);
+        for (int i = 0; i < 3; i++)
+        {
+            _buy[i] = root.Q<Button>("Buy" + (i+1));
+        }
+        _buy[0].RegisterCallback<ClickEvent>(OnBuy1Clicked);
+        _buy[1].RegisterCallback<ClickEvent>(OnBuy2Clicked);
+        _buy[2].RegisterCallback<ClickEvent>(OnBuy3Clicked);
+
+        for (int i = 0; i < 3; i++)
+        {
+            _sell[i] = root.Q<Button>("Sell" + (i+1));
+        }
+        _sell[0].RegisterCallback<ClickEvent>(OnSell1Clicked);
+        _sell[1].RegisterCallback<ClickEvent>(OnSell2Clicked);
+        _sell[2].RegisterCallback<ClickEvent>(OnSell3Clicked);
 
         _goldAmount = root.Q<Label>("GoldAmount");
     }
@@ -74,9 +83,39 @@ public class UIController : MonoBehaviour
         {
             _playerController.BoughtOutfit(outfitID);
             //cahnge text to "Equip"
+            _buy[outfitID].text = "Equip";
             //spend gold
             _playerController.Gold -= _shopController.prices[outfitID];
             //Sell becomes available
+            _sell[outfitID].style.display = DisplayStyle.Flex;
         }
+    }
+
+    private void OnSell1Clicked(ClickEvent evt)
+    {
+        OutfitSellLogic(0);
+    }
+
+    private void OnSell2Clicked(ClickEvent evt)
+    {
+        OutfitSellLogic(1);
+    }
+
+    private void OnSell3Clicked(ClickEvent evt)
+    {
+        OutfitSellLogic(2);
+    }
+
+    private void OutfitSellLogic(int outfitID)
+    {
+        _outfit.ChangeOutfit(3);
+
+            _playerController.SoldOutfit(outfitID);
+            //cahnge text to "Equip"
+            _buy[outfitID].text = "Buy";
+            //spend gold
+            _playerController.Gold += _shopController.prices[outfitID];
+        //Sell becomes available
+        _sell[outfitID].style.display = DisplayStyle.None;
     }
 }
