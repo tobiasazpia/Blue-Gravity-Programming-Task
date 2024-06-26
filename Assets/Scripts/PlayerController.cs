@@ -13,8 +13,27 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D _rb;
 
     private Animator _animator;
+    private Animator _animatorOutfit1;
 
     private float _playerSpeed = 2;
+
+    private UIController _ui;
+
+    private int _gold;
+    public int Gold
+    {
+        get { return _gold; }
+        set
+        {
+            if (_gold == value) return;
+            _gold = value;
+            if (OnGoldChange != null)
+                OnGoldChange(_gold);
+        }
+    }
+    public delegate void OnGoldChangeDelegate(int newVal);
+    public event OnGoldChangeDelegate OnGoldChange;
+
 
     // Start is called before the first frame update
     void Start()
@@ -31,6 +50,11 @@ public class PlayerController : MonoBehaviour
         _rb = GetComponent<Rigidbody2D>();
 
         _animator = GetComponent<Animator>();
+        _animatorOutfit1 = GetComponentInChildren<Animator>();
+
+        _gold = 100;
+        _ui = FindObjectOfType<UIController>();
+        OnGoldChange += _ui.GoldChangeHandler;
     }
 
     private void FixedUpdate()
@@ -60,5 +84,7 @@ public class PlayerController : MonoBehaviour
         _moveAction.Disable();
         _lookAction.Disable();
         _inputActions.Player.Fire.Disable();
+
+        OnGoldChange -= _ui.GoldChangeHandler;
     }
 }
