@@ -17,6 +17,11 @@ public class UIController : MonoBehaviour
     public PlayerController _playerController;
     public ShopController _shopController;
 
+    public AudioSource _audio;
+    public AudioClip buySound;
+    public AudioClip sellSound;
+    public AudioClip equipSound;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -78,9 +83,13 @@ public class UIController : MonoBehaviour
     private void OutfitLogic(int outfitID)
     {
         _outfit.ChangeOutfit(outfitID);
+        _audio.clip = equipSound;
+
+
         ////If not alredy owned,
         if (!_playerController.OwnsOutfit(outfitID))
         {
+            _audio.clip = buySound;
             _playerController.BoughtOutfit(outfitID);
             //cahnge text to "Equip"
             _buy[outfitID].text = "Equip";
@@ -89,6 +98,7 @@ public class UIController : MonoBehaviour
             //Sell becomes available
             _sell[outfitID].style.display = DisplayStyle.Flex;
         }
+        _audio.Play();
     }
 
     private void OnSell1Clicked(ClickEvent evt)
@@ -109,8 +119,11 @@ public class UIController : MonoBehaviour
     private void OutfitSellLogic(int outfitID)
     {
         _outfit.ChangeOutfit(3);
+        //play sound
+        _audio.clip = sellSound;
+        _audio.Play();
 
-            _playerController.SoldOutfit(outfitID);
+        _playerController.SoldOutfit(outfitID);
             //cahnge text to "Equip"
             _buy[outfitID].text = "Buy";
             //spend gold
