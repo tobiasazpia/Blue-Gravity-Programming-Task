@@ -30,7 +30,7 @@ public class UIController : MonoBehaviour
 
         for (int i = 0; i < 3; i++)
         {
-            _buy[i] = root.Q<Button>("Buy" + (i+1));
+            _buy[i] = root.Q<Button>("Buy" + (i + 1));
         }
         _buy[0].RegisterCallback<ClickEvent>(OnBuy1Clicked);
         _buy[1].RegisterCallback<ClickEvent>(OnBuy2Clicked);
@@ -38,19 +38,13 @@ public class UIController : MonoBehaviour
 
         for (int i = 0; i < 3; i++)
         {
-            _sell[i] = root.Q<Button>("Sell" + (i+1));
+            _sell[i] = root.Q<Button>("Sell" + (i + 1));
         }
         _sell[0].RegisterCallback<ClickEvent>(OnSell1Clicked);
         _sell[1].RegisterCallback<ClickEvent>(OnSell2Clicked);
         _sell[2].RegisterCallback<ClickEvent>(OnSell3Clicked);
 
         _goldAmount = root.Q<Label>("GoldAmount");
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     public void GoldChangeHandler(int newVal)
@@ -62,6 +56,9 @@ public class UIController : MonoBehaviour
     public void ToogleShop()
     {
         _shop.visible = !_shop.visible;
+
+        _audio.clip = equipSound;
+        _audio.Play();
     }
 
 
@@ -124,10 +121,10 @@ public class UIController : MonoBehaviour
         _audio.Play();
 
         _playerController.SoldOutfit(outfitID);
-            //cahnge text to "Equip"
-            _buy[outfitID].text = "Buy";
-            //spend gold
-            _playerController.Gold += _shopController.prices[outfitID];
+        //cahnge text to "Equip"
+        _buy[outfitID].text = "Buy";
+        //spend gold
+        _playerController.Gold += _shopController.prices[outfitID];
         //Sell becomes available
         _sell[outfitID].style.display = DisplayStyle.None;
     }

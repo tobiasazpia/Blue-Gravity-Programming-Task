@@ -19,12 +19,6 @@ public class ShopController : MonoBehaviour
         _sp = transform.GetChild(0).GetComponent<SpriteRenderer>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     private void OnMouseOver()
     {
         if (_pI)

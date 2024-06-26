@@ -67,13 +67,7 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        /*if (pI)
-        {
-            if (pI.actions["Shop"].WasPressedThisFrame())
-            {
-                _ui.ToogleShop();
-            }
-        }*/
+        if (_pI.actions["Exit"].WasPerformedThisFrame()) Application.Quit();
     }
 
     private void FixedUpdate()
@@ -87,13 +81,13 @@ public class PlayerController : MonoBehaviour
         _rb.velocity = vel;
 
         //Animation
-        if(vel.sqrMagnitude > 0.01) //To determine idle facing direction
+        if (vel.sqrMagnitude > 0.01) //To determine idle facing direction
         {
             _animator.SetFloat("LastHor", vel.x);
             _animator.SetFloat("LastVert", vel.y);
             //_animatorOutfit.SetFloat("LastHor", vel.x);
             //_animatorOutfit.SetFloat("LastVert", vel.y);
-        } 
+        }
 
         _animator.SetFloat("Horizontal", vel.x);
         _animator.SetFloat("Vertical", vel.y);
