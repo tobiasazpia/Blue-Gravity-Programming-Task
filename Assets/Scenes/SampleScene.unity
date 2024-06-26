@@ -321,7 +321,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a9eef0f632149544b2a57b0fd033f34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _outfit: {fileID: 937705560}
+  _outfit: {fileID: 937705563}
+  _playerController: {fileID: 1736300516}
   _shopController: {fileID: 961681376}
 --- !u!4 &799449341
 Transform:
@@ -363,12 +364,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 937705562}
-  - component: {fileID: 937705560}
   - component: {fileID: 937705559}
   - component: {fileID: 937705561}
   - component: {fileID: 937705558}
   - component: {fileID: 937705557}
   - component: {fileID: 937705556}
+  - component: {fileID: 937705563}
   m_Layer: 0
   m_Name: Outfit
   m_TagString: Untagged
@@ -404,7 +405,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Library: []
-  m_SpriteLibraryAsset: {fileID: 7108339969198208228, guid: 269981aecc1e08a45941423802de77c0, type: 3}
+  m_SpriteLibraryAsset: {fileID: 7108339969198208228, guid: f5f3c52fa06e5fd4682b3a9441396f7d, type: 3}
 --- !u!95 &937705558
 Animator:
   serializedVersion: 5
@@ -447,23 +448,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &937705560
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 937705555}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f1f8ccd8fad475845806b92204d48658, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _pI: {fileID: 0}
-  _outfits:
-  - {fileID: 7108339969198208228, guid: 1351037f645a8254baac96ddf9121ea2, type: 3}
-  - {fileID: 7108339969198208228, guid: 896f4d25193d11041a816df5ea15ce06, type: 3}
-  - {fileID: 7108339969198208228, guid: 269981aecc1e08a45941423802de77c0, type: 3}
 --- !u!212 &937705561
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -505,7 +489,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -703169656, guid: af11391ca6a026d4da4665b865cb0b2e, type: 3}
+  m_Sprite: {fileID: 1366110414, guid: 1bc1687f23d3a364eb663da38aa07bce, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -531,6 +515,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &937705563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 937705555}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa2fcff71b3acd544b98e70771ad7d2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _pI: {fileID: 0}
+  _outfits:
+  - {fileID: 7108339969198208228, guid: 1351037f645a8254baac96ddf9121ea2, type: 3}
+  - {fileID: 7108339969198208228, guid: 896f4d25193d11041a816df5ea15ce06, type: 3}
+  - {fileID: 7108339969198208228, guid: 269981aecc1e08a45941423802de77c0, type: 3}
 --- !u!1 &961681373
 GameObject:
   m_ObjectHideFlags: 0
@@ -845,7 +846,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _pI: {fileID: 0}
-  _outfits: []
 --- !u!50 &1736300517
 Rigidbody2D:
   serializedVersion: 4

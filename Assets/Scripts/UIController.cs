@@ -13,7 +13,8 @@ public class UIController : MonoBehaviour
 
     private Label _goldAmount;
 
-    public PlayerController _outfit;
+    public OutfitController _outfit;
+    public PlayerController _playerController;
     public ShopController _shopController;
 
     // Start is called before the first frame update
@@ -69,11 +70,12 @@ public class UIController : MonoBehaviour
     {
         _outfit.ChangeOutfit(outfitID);
         ////If not alredy owned,
-        if (_outfit.OwnsOutfit(outfitID))
+        if (_playerController.OwnsOutfit(outfitID))
         {
+            _playerController.BoughtOutfit(outfitID);
             //cahnge text to "Equip"
             //spend gold
-            _outfit.Gold -= _shopController.prices[outfitID];
+            _playerController.Gold -= _shopController.prices[outfitID];
             //Sell becomes available
         }
     }
