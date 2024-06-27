@@ -10,7 +10,7 @@
             <ui:VisualElement name="Item" style="width: 100px; height: 100px; align-items: center;">
                 <ui:VisualElement name="Image" style="background-image: url(&apos;project://database/Assets/Art/char_a_p1/1out/char_a_p1_1out_fstr_v04.png?fileID=-1059270025&amp;guid=59142195de9882541b02243762ffe0b6&amp;type=3#char_a_p1_1out_fstr_v04_0&apos;); width: 60px; height: 60px; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0; scale: 5 5; transform-origin: center 60%;" />
                 <ui:VisualElement name="Price" style="flex-direction: row; margin-left: 10px; margin-right: 10px; margin-top: 10px; margin-bottom: 10px;">
-                    <ui:Label text="20" display-tooltip-when-elided="true" name="Amount" />
+                    <ui:Label text="40" display-tooltip-when-elided="true" name="Amount" />
                     <ui:VisualElement name="Icon" style="background-image: url(&apos;project://database/Assets/Art/Brackeys/2D%20Mega%20Pack/Items%20&amp;%20Icons/Pixel%20Art/Coin.png?fileID=2800000&amp;guid=d2c0dc76eca05bb4eb4f3fc4a37f258d&amp;type=3#Coin&apos;); width: 30px; height: 30px;" />
                     <ui:Button text="Buy" display-tooltip-when-elided="true" name="Buy1" />
                     <ui:Button text="Sell" display-tooltip-when-elided="true" name="Sell1" style="display: none;" />
@@ -19,7 +19,7 @@
             <ui:VisualElement name="Item" style="width: 100px; height: 100px; align-items: center;">
                 <ui:VisualElement name="Image" style="background-image: url(&apos;project://database/Assets/Art/char_a_p1/1out/char_a_p1_1out_pfpn_v04.png?fileID=1044787979&amp;guid=dff5e444e96d6ae46b69329030d14b5c&amp;type=3#char_a_p1_1out_pfpn_v04_0&apos;); width: 60px; height: 60px; scale: 5 5; transform-origin: center 60%;" />
                 <ui:VisualElement name="Price" style="flex-direction: row; margin-left: 10px; margin-right: 10px; margin-top: 10px; margin-bottom: 10px;">
-                    <ui:Label text="20" display-tooltip-when-elided="true" name="Amount" />
+                    <ui:Label text="50" display-tooltip-when-elided="true" name="Amount" />
                     <ui:VisualElement name="Icon" style="background-image: url(&apos;project://database/Assets/Art/Brackeys/2D%20Mega%20Pack/Items%20&amp;%20Icons/Pixel%20Art/Coin.png?fileID=2800000&amp;guid=d2c0dc76eca05bb4eb4f3fc4a37f258d&amp;type=3#Coin&apos;); width: 30px; height: 30px;" />
                     <ui:Button text="Buy" display-tooltip-when-elided="true" name="Buy2" />
                     <ui:Button text="Sell" display-tooltip-when-elided="true" name="Sell2" style="display: none;" />
@@ -28,7 +28,7 @@
             <ui:VisualElement name="Item" style="width: 100px; height: 100px; align-items: center;">
                 <ui:VisualElement name="Image" style="background-image: url(&apos;project://database/Assets/Art/char_a_p1/1out/char_a_p1_1out_undi_v01.png?fileID=1574204125&amp;guid=af11391ca6a026d4da4665b865cb0b2e&amp;type=3#char_a_p1_1out_undi_v01_0&apos;); width: 60px; height: 60px; scale: 5 5; transform-origin: center 60%;" />
                 <ui:VisualElement name="Price" style="flex-direction: row; margin-left: 10px; margin-right: 10px; margin-top: 10px; margin-bottom: 10px;">
-                    <ui:Label text="20" display-tooltip-when-elided="true" name="Amount" />
+                    <ui:Label text="10" display-tooltip-when-elided="true" name="Amount" />
                     <ui:VisualElement name="Icon" style="background-image: url(&apos;project://database/Assets/Art/Brackeys/2D%20Mega%20Pack/Items%20&amp;%20Icons/Pixel%20Art/Coin.png?fileID=2800000&amp;guid=d2c0dc76eca05bb4eb4f3fc4a37f258d&amp;type=3#Coin&apos;); width: 30px; height: 30px;" />
                     <ui:Button text="Buy" display-tooltip-when-elided="true" name="Buy3" />
                     <ui:Button text="Sell" display-tooltip-when-elided="true" name="Sell3" style="display: none;" />
